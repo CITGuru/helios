@@ -28,7 +28,7 @@ Helios will now run a local RPC server at `http://127.0.0.1:8545`.
 Helios is still experimental software. While we hope you try it out, we do not suggest adding it as your main RPC in wallets yet. Sending high-value transactions from a wallet connected to Helios is discouraged.
 
 ### Additional Options
-`--consensus-rpc` or `-c` can be used to set a custom consensus layer rpc endpoint. This must be a consenus node that supports the light client beaconchain api. We recomment using Nimbus for this. If no consensus rpc is supplied, it defaults to `https://www.lightclientdata.org` which is run by us.
+`--consensus-rpc` or `-c` can be used to set a custom consensus layer rpc endpoint. This must be a consenus node that supports the light client beaconchain api. We recommend using Nimbus for this. If no consensus rpc is supplied, it defaults to `https://www.lightclientdata.org` which is run by us.
 
 `--checkpoint` or `-w` can be used to set a custom weak subjectivity checkpoint. This must be equal the first beacon blockhash of an epoch. Weak subjectivity checkpoints are the root of trust in the system. If this is set to a malicious value, an attacker can cause the client to sync to the wrong chain. Helios sets a default value initially, then caches the most recent finalized block it has seen for later use.
 
@@ -40,6 +40,7 @@ Helios is still experimental software. While we hope you try it out, we do not s
 
 ### Configuration Files
 All configuration options can be set on a per-network level in `~/.helios/helios.toml`. Here is an example config file:
+
 ```toml
 [mainnet]
 consensus_rpc = "https://www.lightclientdata.org"
